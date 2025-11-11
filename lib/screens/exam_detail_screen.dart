@@ -34,7 +34,7 @@ class ExamDetailScreen extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 8,
             offset: const Offset(0, 2),
           ),
@@ -45,7 +45,7 @@ class ExamDetailScreen extends StatelessWidget {
         children: [
           Container(
             decoration: BoxDecoration(
-              color: color.withOpacity(0.15),
+              color: color.withValues(alpha: 0.15),
               borderRadius: BorderRadius.circular(10),
             ),
             padding: const EdgeInsets.all(10),
@@ -58,15 +58,15 @@ class ExamDetailScreen extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: TextStyle(
-                    color: Colors.grey.shade600,
-                    fontSize: 12,
-                  ),
+                  style: TextStyle(color: Colors.grey.shade600, fontSize: 12),
                 ),
                 const SizedBox(height: 4),
                 Text(
                   content,
-                  style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
                   maxLines: multiline ? null : 1,
                 ),
               ],
@@ -108,7 +108,7 @@ class ExamDetailScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(16),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.15),
+                    color: Colors.black.withValues(alpha: 0.15),
                     blurRadius: 12,
                     offset: const Offset(0, 4),
                   ),
@@ -131,7 +131,10 @@ class ExamDetailScreen extends StatelessWidget {
                         ),
                         const SizedBox(height: 8),
                         Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 10,
+                            vertical: 6,
+                          ),
                           decoration: BoxDecoration(
                             color: past ? Colors.grey.shade300 : Colors.green,
                             borderRadius: BorderRadius.circular(12),
@@ -198,7 +201,10 @@ class ExamDetailScreen extends StatelessWidget {
                     const SizedBox(height: 4),
                     Text(
                       _formatTimeRemaining(),
-                      style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      style: const TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ],
                 ),

@@ -24,9 +24,7 @@ class _ExamListScreenState extends State<ExamListScreen> {
   void _navigateToDetail(Exam exam) {
     Navigator.push(
       context,
-      MaterialPageRoute(
-        builder: (_) => ExamDetailScreen(exam: exam),
-      ),
+      MaterialPageRoute(builder: (_) => ExamDetailScreen(exam: exam)),
     );
   }
 
@@ -60,7 +58,10 @@ class _ExamListScreenState extends State<ExamListScreen> {
             padding: const EdgeInsets.all(16),
             child: Center(
               child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 8,
+                ),
                 decoration: BoxDecoration(
                   color: Colors.blue,
                   borderRadius: BorderRadius.circular(20),

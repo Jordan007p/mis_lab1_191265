@@ -7,11 +7,7 @@ class ExamCard extends StatelessWidget {
   final Exam exam;
   final VoidCallback onTap;
 
-  const ExamCard({
-    super.key,
-    required this.exam,
-    required this.onTap,
-  });
+  const ExamCard({super.key, required this.exam, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -42,12 +38,19 @@ class ExamCard extends StatelessWidget {
             children: [
               Text(
                 exam.subject,
-                style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
               const SizedBox(height: 8),
               Row(
                 children: [
-                  Icon(Icons.calendar_today, size: 18, color: past ? Colors.grey : Colors.blue),
+                  Icon(
+                    Icons.calendar_today,
+                    size: 18,
+                    color: past ? Colors.grey : Colors.blue,
+                  ),
                   const SizedBox(width: 8),
                   Text(dateFmt.format(exam.dateTime)),
                 ],
@@ -55,7 +58,11 @@ class ExamCard extends StatelessWidget {
               const SizedBox(height: 6),
               Row(
                 children: [
-                  Icon(Icons.access_time, size: 18, color: past ? Colors.grey : Colors.orange),
+                  Icon(
+                    Icons.access_time,
+                    size: 18,
+                    color: past ? Colors.grey : Colors.orange,
+                  ),
                   const SizedBox(width: 8),
                   Text(timeFmt.format(exam.dateTime)),
                 ],
@@ -64,7 +71,11 @@ class ExamCard extends StatelessWidget {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Icon(Icons.meeting_room, size: 18, color: past ? Colors.grey : Colors.green),
+                  Icon(
+                    Icons.meeting_room,
+                    size: 18,
+                    color: past ? Colors.grey : Colors.green,
+                  ),
                   const SizedBox(width: 8),
                   Expanded(child: Text(exam.rooms.join(', '))),
                 ],
@@ -73,7 +84,10 @@ class ExamCard extends StatelessWidget {
               Align(
                 alignment: Alignment.centerLeft,
                 child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 8,
+                    vertical: 4,
+                  ),
                   decoration: BoxDecoration(
                     color: past ? Colors.grey.shade400 : Colors.green,
                     borderRadius: BorderRadius.circular(12),
